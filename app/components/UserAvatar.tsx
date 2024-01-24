@@ -13,7 +13,7 @@ export const UserAvatar = () => {
           .catch(error => console.log("Sign Out error: ", error))
     }
 
-    if(session.status === "authenticated") {
+    if(session.status === "authenticated" && session.data.user) {
         return (
             <div className="flex flex-col p-10 gap-8 items-center">
                 <img src={session.data.user?.image || ""} alt={session.data.user?.name || "avatar"} className="w-32 h-32 rounded-full ring-4 ring-blue-500/60" />
