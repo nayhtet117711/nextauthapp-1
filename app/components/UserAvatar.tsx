@@ -29,7 +29,7 @@ export const UserAvatar = () => {
         )
     } else if(session.status === "unauthenticated") {
         return (
-            <button onClick={onClickSignIn} className="duration-200 px-5 py-3 rounded-xl ring-2 hover:ring-4 active:bg-blue-500/10 active:scale-95">Sign In</button>
+            <button onClick={onClickSignIn} className="duration-200 px-5 py-3 rounded-xl ring-2 hover:ring-4 active:bg-blue-500/10 active:scale-95">Sign In with Github</button>
         )
     }
     return (
