@@ -20,9 +20,11 @@ export const UserAvatar = () => {
                 <div className="flex flex-col gap-1 items-center">
                     <div className="text-2xl font-semibold">{session.data.user?.name}</div>
                     <div className="font-normal text-sm text-neutral-500">{session.data.user?.email}</div>
+                    {session.data.user.id && <span className="mt-2 px-3 py-[1px] uppercase text-xs bg-blue-500/30 text-neutral-300 rounded-full ring-1 ring-blue-500">{session.data.user.is_admin ? "Admin" : "User"}</span>}
+                    {!session.data.user.id && <span className="mt-2 px-3 py-[1px] uppercase text-xs bg-red-500/30 text-neutral-300 rounded-full ring-1 ring-red-500">{"Unauthorized"}</span>}
                 </div>
                 <button onClick={onClickSignOut} className="duration-200 px-5 py-3 rounded-xl ring-2 ring-neutral-500 hover:ring-4 active:bg-blue-500/10 active:scale-95">Sign Out</button>
-                {/* <pre className="text-xs p-3 rounded-lg bg-white/30">{JSON.stringify(session.data, null, 4)}</pre> */}
+                <pre className="text-xs p-3 rounded-lg bg-white/30">{JSON.stringify(session.data, null, 4)}</pre>
             </div>
         )
     } else if(session.status === "unauthenticated") {
